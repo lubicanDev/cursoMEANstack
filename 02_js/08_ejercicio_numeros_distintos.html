@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Prácticas js - Números Distintos</title>
+	</head>
+
+	<body>
+
+	</body>
+
+	<script type="text/javascript">
+
+		//
+		// OJO hay que utilizar parseInt para que no den error los números negativos!!!!
+		//
+
+		var number1= prompt ("introduce el valor 1");
+			while (isNaN(number1)){
+				number1=prompt ("El valor introducido no es numérico. Introduce el valor 1");
+			}
+		number1= parseInt(number1);
+		var valorMax=number1;
+
+		var number2= prompt ("introduce el valor 2");
+			while (isNaN(number2)){
+				number1=prompt ("El valor introducido no es numérico. Introduce el valor 2");
+			}
+		number2= parseInt(number2);
+		if (number2>valorMax) {valorMax=number2;};
+
+		var number3= prompt ("introduce el valor 3");
+			while (isNaN(number2)){
+				number1=prompt ("El valor introducido no es numérico. Introduce el valor 2");
+			}
+		number3= parseInt(number3);
+		if (number3>valorMax) {valorMax=number3;};
+
+
+
+
+		//alert ("El valor máximo introducido es: "+ valorMax);
+		evaluaNumero (valorMax);
+
+
+		function evaluaNumero (num) {
+
+			if (num==0) {
+				alert ("El valor máximo introducido es: "+ num + " y es igual a \"0\"");
+			} else if (num>0) {
+				alert ("El valor máximo introducido es: "+ num + " y es mayor que \"0\"");
+			} else{
+				alert ("El valor máximo introducido es: "+ num + " y es menor que \"0\"");
+			}
+
+		}
+
+	</script>
+
+</html>

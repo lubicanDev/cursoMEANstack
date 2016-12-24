@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Prácticas js</title>
+	</head>
+
+	<body>
+
+	</body>
+
+	<script type="text/javascript">
+
+		var fecha = new Date();
+
+		console.log("fecha actual: " + fecha.getFullYear() );
+
+		var otraFecha = fecha;
+		var otraFechaClonada = new Date (fecha);
+
+		fecha.setFullYear(1989);
+
+		console.log("año: " + fecha.getFullYear() );
+
+		function cambiarYear(unaFecha){
+
+			unaFecha.setFullYear(2011);
+			console.log("año en función: " + unaFecha.getFullYear() );
+		}
+
+console.log("año fuera de la función: " + fecha.getFullYear() );
+console.log("año otraFecha fuera de la función: " + otraFecha.getFullYear() );
+
+console.log("Cambiamos con cambiarYear() ");
+
+cambiarYear(fecha);
+
+console.log("año fuera de la función: " + fecha.getFullYear() );
+console.log("año otraFecha fuera de la función: " + otraFecha.getFullYear() );
+
+var otraFechaClonada = new Date(fecha);
+console.log("Año otraFechaClonada fuera funcion: " + otraFechaClonada.getFullYear() );
+
+
+	</script>
+</html>

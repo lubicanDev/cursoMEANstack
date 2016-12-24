@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Intro Objetos</title>
+	</head>
+
+	<body>
+
+	</body>
+
+	<script type="text/javascript">
+
+		var numero = prompt("Númerode alumnos?");  	//preguntamos cuántos alumnos vamos a introducir
+
+		numero = parseInt(numero); 
+
+
+		var alumnos = new Array(); 					// Creamos Array de alumnos
+
+		for (var i = 0; i < numero; i++) {
+			var nombre = prompt("Nombre del Alumno " + (i+1) + ":");
+			var fecha = prompt("Fecha de nacimiento (DD-MM-AAAA) del alumno " + (i+1) + ": ");
+
+			var nuevoAlumno = new Object(); 	// cada alumno es un objeto
+			
+			nuevoAlumno.nombre = nombre;		// "nombre" es una propiedad del objeto "nuevoAlumno"
+				
+			var infoFecha=fecha.split("-");		// split() Method --> to split a string into an array of substrings
+
+			nuevoAlumno.fecha=new Date(			// La propiedad "fecha" del objeto "nuevoAlumno" es un objeto "Date"
+				parseInt(infoFecha[2]), 		// Año
+				parseInt(infoFecha[1]) - 1, 	// Mes
+				parseInt(infoFecha[0])		 	// Día
+				);
+
+				//alert ("Nombre: "+ nuevoAlumno.nombre + " Fecha: " + nuevoAlumno.fecha);
+
+			alumnos[i] = nuevoAlumno;
+		};
+
+	// sacamos el listado de "Alumnos" en una tabla
+
+		document.write('<table style="width:100%" border="1">');		//Abrimos etiqueta <table>
+
+		document.write ("<tr><td>Nombre:</td><td>Fecha:</td></tr>");	// Encabezado de la tabla. 1ra fila
+		
+		// Completamos todas las filas de la tabla
+		for (var i = 0; i < numero; i++) {
+			document.write ("<tr><td>" + alumnos[i].nombre + "</td><td>" + alumnos[i].fecha + "</td></tr>");
+		}
+
+		document.write("</table>");		//Cerramos etiqueta </table>
+
+	</script>
+
+</html>

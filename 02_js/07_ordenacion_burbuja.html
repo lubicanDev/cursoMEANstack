@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Algoritmo Burbuja</title>
+	</head>
+
+	<body>
+
+	</body>
+
+	<script type="text/javascript">
+
+		var listaDesordenada=[5,7,9,6,4,-3,Number.POSITIVE_INFINITY];
+
+		// ordenaLista(listaDesordenada);
+
+		function ordenaLista (listaParaOrdenar){
+
+			console.log("lista desordenada: " + listaParaOrdenar);
+
+			var n = listaParaOrdenar.length;
+
+			for (var i = 1; i <= n; i++) {
+
+				console.log (n + " elementos para ordenar");
+
+				//console.log(listaParaOrdenar[i]);
+				//console.log(listaParaOrdenar[i+1]);
+
+				for (var j = 0; j <= n-i; j++) {				
+
+					//console.log("comparando: " + listaParaOrdenar[j] + listaParaOrdenar[j+1]);
+
+					if (listaParaOrdenar[j] > listaParaOrdenar [j+1]) {
+
+						var aux=listaParaOrdenar[j];
+						listaParaOrdenar[j]=listaParaOrdenar[j+1];
+						listaParaOrdenar[j+1]=aux;
+
+					};
+				};
+				
+				console.log (listaParaOrdenar);
+
+
+			console.log("Paso: " + i + " --> " + "lista ordenándose: " + listaParaOrdenar);
+
+			};
+		
+		return listaParaOrdenar;		
+
+		}
+
+		var listaOrdenada=(ordenaLista(listaDesordenada));
+
+		console.log(" La Lista Ordenada: " + listaOrdenada);
+
+
+
+	</script>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Prácticas js - Ejemplos String</title>
+	</head>
+
+	<body>
+
+	</body>
+
+	<script type="text/javascript">
+
+		var cadena = "Ponemos cualquier texto.";
+
+		console.log ("longitud: " + cadena.length);
+		console.log ("Mayúsculas: " + cadena.toUpperCase() );
+		console.log ("Minúsculas: " + cadena.toLowerCase() );
+
+		console.log ("Caracter 4: " + cadena.charAt(3) );
+		console.log ("Caracter 4: " + cadena[3] ); // lo mismo que lo anterior
+
+		console.log ("Index of \"t\": " + cadena.indexOf("t") );
+		console.log ("Index of \"t\": " + cadena.lastIndexOf("t") );
+
+		console.log ("Substring 9: " + cadena.substring(9) );
+		console.log ("Substring 9, 4: " + cadena.substring(9,4) );
+
+		var arrayDeCadena = cadena.split(" ");
+		console.log ("*****EMPEZANDO CON CADENAS*****");
+		console.log ("Palabra 2da: " + arrayDeCadena[1] );
+		console.log ("Palabra 6ta: " + typeof arrayDeCadena[6] );
+
+		arrayDeCadena[6]=83;
+
+		console.log ("Pop elemento 6: " + arrayDeCadena.pop() );
+		console.log ("Pop elemento 6 después: " + typeof arrayDeCadena[6] );
+
+		arrayDeCadena.push("OTRO");
+		arrayDeCadena.push("OTRO");
+		arrayDeCadena.push(7);
+		arrayDeCadena.push(false);
+
+		console.log ("Todo el Array: " + arrayDeCadena.join(","));
+		var otraCadena=arrayDeCadena.join("*");
+		console.log ("Union otraCadena: " + otraCadena );
+
+
+	</script>
+</html>

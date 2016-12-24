@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Calculadora</title>
+	</head>
+
+	<body>
+
+		<form name="calc">
+
+			Operando 1 <br>
+			<input name="operando1" type="text" value="0" Sixe="12">
+			<br><br>
+			Operando 2 <br>
+			<input name="operando2" type="text" value="0" Sixe="12">
+			<br><br>
+			<input name="" value=" + " type="button" onclick="calcula('+')">
+			<input name="" value=" - " type="button" onclick="calcula('-')">
+			<input name="" value=" * " type="button" onclick="calcula('*')">
+			<input name="" value=" / " type="button" onclick="calcula('/')">
+			<br><br>
+			resultado: <input name="resultado" type="text" value="0" Size="12">
+		</form>
+
+		<div id="texto">
+			<br>Operaciones:
+		</div>
+
+	</body>
+
+	<script type="text/javascript">
+
+	function calcula (operador) {
+
+		var oper_1=document.calc.operando1.value;		// Tomamos los valores del formulario
+		var oper_2=document.calc.operando2.value;
+
+		var result = eval (oper_1 + operador + oper_2);	// The eval() function evaluates or executes an argument.
+
+		document.calc.resultado.value=result;			// Sacamos el resultado en <input name ="resultado">
+
+		// HTML DOM innerHTML Property
+		// The innerHTML property sets or returns the HTML content (inner HTML) of an element
+
+		// Change the HTML content of a <div> element with id="texto"
+
+		document.getElementById('texto').innerHTML += ("<br>" +  oper_1 + operador + oper_2 +" = " + result + "<br>"); // añadimos una linea por operación
+	}
+
+
+	</script>
+
+</html>

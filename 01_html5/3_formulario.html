@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Formularios</title>
+	</head>
+
+	<body>
+		<form action="mailto:ricardo@lubican.com" method="post" enctype="text/plain">
+
+			Nombre: <input type="text" name="nombre" size="30" maxlength="40" >
+			<br/><br>
+			e-mail: <input type="text" name="mail" size="30" maxlength="100">
+			<br/><br>
+			Sexo:
+			<br/>
+			<input type="radio" name="sexo" value="Varon" checked>Hombre <br>
+			<input type="radio" name="sexo" value="Mujer">Mujer <br>
+			<br/>
+			Frecuencia de viajes <br>
+			<select name="frecuencia">
+				<option value="1">Varias veces al día</option>
+				<option value="2">Una vez al día</option>
+				<option value="3">Varias veces a la semana</option>
+				<option value="4">Varias veces al mes</option>
+			</select>
+			<br><br>
+			Comentarios: <br>
+			<textarea cols="30" rows="7" name="comentarios">Cuétanos algo...</textarea>
+			<br><br>
+			<input type="submit" value="Enviar formulario">
+			<br><br>
+			<input type="reset" value="Borrar formulario">
+
+
+
+
+		</form>
+
+
+
+
+	</body>
+</html>
