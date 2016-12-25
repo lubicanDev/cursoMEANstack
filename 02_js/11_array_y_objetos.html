@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Arrays y Objetos</title>
+	</head>
+
+	<body>
+		<div id="texto"></div>
+	</body>
+
+	<script type="text/javascript">
+
+		var div = document.getElementById("texto");
+
+		var arrayUno=new Array();
+
+		div.innerHTML += "*" + arrayUno + "<br>"; 	// No muestra nada porque "arrayUno" está vacío  ??
+
+		arrayUno[0]="ELEMENTO 0";
+		arrayUno[1]="ELEMENTO 1";
+
+		div.innerHTML += "*" + arrayUno + "<br>"; 	// muestra los valores dentro de "arrayUno"
+
+		arrayUno["propiedad"]="ELEMENTO PROP";		// creo un elemento "propiedad" dentro de "arrayUno"
+
+		arrayUno.toString = function() {			// NO ENTIENDO ESTO DE "arrayUno.toString" PARA QUE??
+
+			var resultado="";
+			for (var i=0; i<this.length; i++){
+				resultado+=  ", "+this[i];
+			}
+
+			return resultado + ", prop " + arrayUno.propiedad;
+
+		}
+
+		div.innerHTML += arrayUno + "<br>";
+
+	</script>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Objetos</title>
+	</head>
+
+	<body>
+		<div id="texto"></div>
+	</body>
+
+	<script type="text/javascript">
+
+// OBJETOS
+
+		var div = document.getElementById("texto");
+
+		var objetoUno = new Object();
+		var objetoDos = new Object();
+		var objetoTres= new Object();
+
+		objetoUno["propiedad_1"]="ELEMENTO PROP 1"; // se puede hacer así
+		objetoUno.propiedad_2 = "ELEMENTO PROP 2";	// o así
+
+		console.log("1.- " + objetoUno.propiedad_1);  	// -> 1.- ELEMENTO PROP 1
+		console.log("2.- " + objetoUno.propiedad_2);  	// -> 2.- ELEMENTO PROP 2
+
+		objetoUno.agregar = function (clave, valor) { 	// agregar en sí es una propiedad.
+														// Es un objeto de tipo función que recibe 2 parámetros
+
+								this[clave] = valor;
+							};
+
+		objetoUno.toString2 = function () {				// la función recorre todas las propiedades del objeto
+														// y la muestra como un string
+								var resultado="";
+
+								for (p in this){
+									resultado +=  '\"'+ p + '\": \"' + objetoUno[p] + '\"\n';
+								};
+								return resultado;		// Devuelve la cadena
+							};
+
+	
+		objetoUno.agregar ("propiedad_3","ELEMENTO PROP 3" );
+
+		console.log("3.- " + objetoUno.propiedad_3);  	// -> 3.- ELEMENTO PROP 3
+
+		objetoDos.otroAgregar = objetoUno.agregar;
+
+		objetoDos.otroAgregar ("propiedad_1", "PROPIEDAD AGREG 1");
+
+		console.log("4.- " + objetoDos.propiedad_1);	// -> 4.- PROPIEDAD AGREG 1
+
+		console.log("5.- " + objetoUno.toString2());
+
+		objetoDos.toString2 = objetoUno.toString2;
+
+		console.log("6.- " + objetoDos.toString2());
+
+
+		//objetoTres.miObjeto = objetoUno.propiedad_1;
+
+		//objetoUno.propiedad_1="jklsdjfjfjsdfjsa";
+
+		//div.innerHTML += "<br> objetoDos: <br>" + objetoTres.miObjeto + "<br>";
+
+
+	</script>
+
+</html>
