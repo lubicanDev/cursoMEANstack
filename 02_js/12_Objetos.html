@@ -44,24 +44,33 @@
 	
 		objetoUno.agregar ("propiedad_3","ELEMENTO PROP 3" );
 
-		console.log("3.- " + objetoUno.propiedad_3);  	// -> 3.- ELEMENTO PROP 3
+			console.log("3.- " + objetoUno.propiedad_3);  	// -> 3.- ELEMENTO PROP 3
 
 		objetoDos.otroAgregar = objetoUno.agregar;
 
 		objetoDos.otroAgregar ("propiedad_1", "PROPIEDAD AGREG 1");
 
-		console.log("4.- " + objetoDos.propiedad_1);	// -> 4.- PROPIEDAD AGREG 1
+			console.log("4.- " + objetoDos.propiedad_1);	// -> 4.- PROPIEDAD AGREG 1
 
-		console.log("5.- " + objetoUno.toString2());
+			console.log("5.- " + objetoUno.toString2());
 
 		objetoDos.toString2 = objetoUno.toString2;
 
-		console.log("6.- " + objetoDos.toString2());
+			console.log("6.- " + objetoDos.toString2());
 
 
-		//objetoTres.miObjeto = objetoUno.propiedad_1;
+		objetoTres.miObjeto = objetoUno.propiedad_1;
 
-		//objetoUno.propiedad_1="jklsdjfjfjsdfjsa";
+			console.log("7.- " + objetoTres.miObjeto);		// -> 7.- ELEMENTO PROP 1
+
+		objetoUno.propiedad_1="jklsdjfjfjsdfjsa";
+
+			console.log("8.- " + objetoTres.miObjeto);		// -> 8.- ELEMENTO PROP 1
+
+		objetoTres.miObjeto = objetoUno.propiedad_1;
+
+			console.log("9.- " + objetoTres.miObjeto);		// -> 9.- jklsdjfjfjsdfjsa
+			
 
 		//div.innerHTML += "<br> objetoDos: <br>" + objetoTres.miObjeto + "<br>";
 

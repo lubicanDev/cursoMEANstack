@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Reloj POO</title>
+	</head>
+
+	<body>
+
+		<h2>Reloj con javaScript POO</h2>
+
+		<form name="reloj" onSumit="0">
+			<table>
+				<tr>
+					<td></td>
+					<td>Hoy es </td>
+					<td>La hora es </td>
+					<td>ID setTimeout()</td>
+					<td>Estado</td>
+					<td>Id Reloj</td>
+				</tr>
+				<tr>
+					<td>Reloj 1</td>
+					<td><input type="text" name="laFecha1" size="12" value="" > </td>
+					<td><input type="text" name="laHora1" size="12" value="" > </td>
+					<td><input type="text" name="idTimer1" size="12" value="" > </td>
+					<td><input type="text" name="estado1" size="12" value="" > </td>
+					<td><input type="text" name="id1" size="12" value="" > </td>
+					<td> <input type="button" name="buttonPause1" value="" onClick="">  </td>
+				</tr>	
+				<tr>
+					<td>Reloj 2</td>
+					<td><input type="text" name="laFecha2" size="12" value="" > </td>
+					<td><input type="text" name="laHora2" size="12" value="" > </td>
+					<td><input type="text" name="idTimer2" size="12" value="" > </td>
+					<td><input type="text" name="estado2" size="12" value="" > </td>
+					<td><input type="text" name="id2" size="12" value="" > </td>
+					<td> <input type="button" name="buttonPause2" value="" onClick="">  </td>
+				</tr>
+				<tr>
+					<td>Reloj 3</td>
+					<td><input type="text" name="laFecha3" size="12" value="" > </td>
+					<td><input type="text" name="laHora3" size="12" value="" > </td>
+					<td><input type="text" name="idTimer3" size="12" value="" > </td>
+					<td><input type="text" name="estado3" size="12" value="" > </td>
+					<td><input type="text" name="id3" size="12" value="" > </td>
+					<td> <input type="button" name="buttonPause3" value="" onClick="">  </td>
+				</tr>		
+			</table>
+		</form>
+
+	</body>
+
+	<script type="text/javascript" src="15_reloj_POO.js"></script>
+
+	<script type="text/javascript">
+
+		//Creamos tres objetos "Reloj"
+		// pasamos por parámetro elemento DOM donde queremos mostrar el reloj
+
+		var relojUno = new Reloj(document.reloj.laFecha1, document.reloj.laHora1, document.reloj.idTimer1, document.reloj.estado1, document.reloj.id1, document.reloj.buttonPause1);
+		var relojDos = new Reloj(document.reloj.laFecha2, document.reloj.laHora2, document.reloj.idTimer2, document.reloj.estado2, document.reloj.id2, document.reloj.buttonPause2);
+		var relojTres = new Reloj(document.reloj.laFecha3, document.reloj.laHora3, document.reloj.idTimer3, document.reloj.estado3, document.reloj.id3, document.reloj.buttonPause3);
+
+		relojUno.comenzarReloj();
+		relojDos.comenzarReloj();
+		relojTres.comenzarReloj();
+
+
+	</script>
+
+</html>

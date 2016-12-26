@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Reloj</title>
+	</head>
+
+	<body onLoad="comenzarReloj()">		<!--Esperamos a que se cargue DOM-->
+
+		<h2>Reloj con javaScript</h2>
+
+		<form name="reloj" onSumit="0">
+			<table>
+				<tr>
+					<td>Hoy es </td>
+					<td>La hora es </td>
+					<td>ID setTimeout()</td>
+					<td>Estado</td>
+				</tr>
+				<tr>
+					<td><input type="text" name="laFecha" size="12" value="" > </td>
+					<td><input type="text" name="laHora" size="12" value="" > </td>
+					<td><input type="text" name="idTimer" size="12" value="" > </td>
+					<td><input type="text" name="estado" size="12" value="">  </td>
+
+				</tr>
+				<tr>
+					<td> <input type="button" name="buttonPause" value="Parar Reloj" onClick="pararReloj()">  </td>
+				</tr>		
+			</table>
+		</form>
+
+	</body>
+
+	<script type="text/javascript">
+
+		var timerId = null;
+
+		var timerFuncionando = true;
+
+		function comenzarReloj() {
+			//pararReloj();
+			obtenerFecha();
+			mostrarFechaHora();
+			document.reloj.estado.value="Funcionando";			
+		}
+
+		function pararReloj() {
+
+			if (timerFuncionando) {
+				clearTimeout(timerId);			// Window clearTimeout() Method
+												// The clearTimeout() method clears a timer set with the setTimeout() method.
+												// The ID value returned by setTimeout() is used as the parameter for the clearTimeout() method.
+												// To be able to use the clearTimeout() method, you must use a global variable when creating the timeout method. 
+												// ej.: myVar = setTimeout("javascript function", milliseconds);
+				timerFuncionando = false;
+				document.reloj.buttonPause.value="Comenzar Reloj";
+				document.reloj.estado.value="Pausado";
+
+			}
+			else {
+				comenzarReloj();
+				document.reloj.buttonPause.value="Parar Reloj";
+				document.reloj.estado.value="Funcionando";
+			}
+
+
+		}
+
+		function mostrarFechaHora() {
+
+			var ahora = new Date();
+
+			var hora = ahora.getHours();
+			var minuto= ahora.getMinutes();
+			var segundo = ahora.getSeconds();
+
+			var soloHora = ((hora>12) ? hora - 12 : hora);
+
+			var valorHora = "" + ((soloHora<10) ? "0" : ":") + soloHora;	// ponemos ""+ para que me lo convierta
+																			// implícitamente a cadena de texto
+			valorHora += ((minuto<10) ? ":0" : ":") + minuto;
+			valorHora += ((segundo<10) ? ":0" : ":") + segundo;
+			valorHora += ((hora>12 ? " P.M." : " A.M"));
+
+			document.reloj.laHora.value = valorHora;				// Mostramos "valorHora" en el <input name="laHora">
+
+			timerId = setTimeout("mostrarFechaHora()", 1000); 		// llama a la función en 1 segundo
+																	// setTimeout crea un input que se almacena en timerId
+
+			document.reloj.idTimer.value = timerId;					// Mostramos "timerId" en el <input name="idTimer">
+
+			//Esto es equivalente
+			//document.getElementsByName ("idTimer") [0].value = timerId;
+
+			timerFuncionando=true;
+		}
+
+		function obtenerFecha() {
+				var hoy = new Date();
+				var valorHoy = "" + hoy.getDate() + " / " + (hoy.getMonth() + 1) + " / " + (hoy.getYear() + 1900);
+
+				document.reloj.laFecha.value=valorHoy;
+		}
+
+	</script>
+
+</html>
