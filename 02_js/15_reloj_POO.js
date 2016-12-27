@@ -54,7 +54,10 @@ Reloj.prototype.comenzarReloj = function () {
 
 	console.log(this.button.onclick);
 
-	this.button.attributes[4].nodeValue="listaRelojes["+(this.idReloj-1)+"].pararReloj()";
+	// OPCIÓN 1
+		this.button.setAttribute("onclick", "listaRelojes["+(this.idReloj-1)+"].pararReloj()");
+	// OPCIÓN 2
+		//this.button.attributes[4].nodeValue="listaRelojes["+(this.idReloj-1)+"].pararReloj()";
 
 	console.log(this.button.onclick);
 
