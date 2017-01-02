@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Ejemplo Formulario HTML5</title>
+		<meta name="description" content="Ejemplo Header HTML5">
+	</head>
+
+	<body>
+		<header>
+			<h1 id="principal">Formularios en HTML5</h1>
+		</header>
+
+
+		<section>
+
+			<form name="miFormulario" id="miFormulario" method="get">
+
+				Nombre: <input type="text" name="nombre" id="nombre" placeholder="nombre" required><br>
+
+				Email: <input type="email" name="email" id="email" placeholder="direccion@miemail.com" required><br>
+
+				Color: <input type="color" name="color" id="color"><br>
+
+				URL: <input type="url" name="url" id="url" placeholder="https://google.com"><br>
+
+				Edad: <input type="number" name="edad" id="edad" min="1" max="150" placeholder="27" required><br>
+
+				Fecha: <input type="date" name="fecha" id="fecha"><br>
+
+				Hora: <input type="time" name="hora" id="hora"><br>
+
+				Mes: <input type="month" name="mes" id="mes"><br>
+				
+				Semana: <input type="week" name="semana" id="semana"><br>
+				
+				Teléfono: <input type="tel" name="telefono" id="telefono" pattern="[0-9]{9}" placeholder="619000000" required><br>
+
+				Buscar: <input type="search" name="buscar" id="buscar" placeholder="Término de búsqueda"><br>
+
+				Rango: <input type="range" name="rango" id="rango"><br>
+
+				Cómo quieres el Café: <input list="cafes" name="cafe" id="cafe">
+
+					<datalist id="cafes">
+					  <option value="Café solo">
+					  <option value="Café con leche">
+					  <option value="Café descafeinado">
+					  <option value="Carajillo">
+					  <option value="Latte Macchiatto">
+					  <option value="Chocolate">
+					</datalist>
+
+
+
+
+
+				<input type="submit" value="Enviar">
+
+			</form>
+
+
+		</section>
+
+
+
+		<footer>
+
+		</footer>
+
+
+
+
+
+	</body>
+</html>
