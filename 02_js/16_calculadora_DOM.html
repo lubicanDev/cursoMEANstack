@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Calculadora DOM</title>
+	</head>
+	<body>
+		<div id='texto'>Calculadora<br></div>
+		<div id="cajaCalculadora"></div>
+	</body>
+
+<script type="text/javascript">
+
+	creaCalculadora();
+
+	function creaCalculadora(){
+
+		var caja=document.getElementById('cajaCalculadora');
+		console.log(caja);  // -> <div id="cajaCalculadora"></div>
+
+		// ELEMENTO FORM
+		var formCalc=document.createElement('form');	// Creamos elemento "form"
+		formCalc.name="calculadora";
+		caja.appendChild(formCalc);					// "form" como hijo del "div"
+		
+		// ELEMENTOS FORM OPERANDOS
+		var text= document.createTextNode('Operando 1: '); 
+		formCalc.appendChild(text);							// Como hijo de "form"
+
+		var inputOperando1=document.createElement("input");
+			inputOperando1.type="text";
+			inputOperando1.id="operando1";
+			inputOperando1.name="operando1";
+			inputOperando1.value="0";
+			inputOperando1.size="12";
+			inputOperando1.maxLength="12";
+		formCalc.appendChild(inputOperando1);
+		formCalc.appendChild(document.createElement("br"));
+
+		var text= document.createTextNode('Operando 2: ');
+		formCalc.appendChild(text);
+
+		var inputOperando2=document.createElement("input");
+			inputOperando2.type="text";
+			inputOperando2.id="operando2";
+			inputOperando2.name="operando2";
+			inputOperando2.value="0";
+			inputOperando2.size="12";
+			inputOperando2.maxLength="12";
+		formCalc.appendChild(inputOperando2);
+		formCalc.appendChild(document.createElement("br"));
+		formCalc.appendChild(document.createElement("br"));
+
+		// ELEMENTOS FORM Caja Rsultado
+
+		var inputResultado=document.createElement("input");
+			inputResultado.type="text";
+			inputResultado.id="resultado";
+			inputResultado.name="resultado";
+			inputResultado.value="0";
+			inputResultado.size="12";
+			inputResultado.maxLength="12";
+
+		// ELEMENTOS FORM OPERADORES
+
+		//console.log("calcula('" + op1 + "','" + op2+ "','+')");
+
+		var inputOperandorSuma=document.createElement("input");
+			inputOperandorSuma.type="button";
+			inputOperandorSuma.name="suma";
+			inputOperandorSuma.value="+";
+			inputOperandorSuma.setAttribute("onclick", "calcula('" + inputOperando1.id + "','" + inputOperando2.id+ "','+','" + inputResultado.id + "')");
+		formCalc.appendChild(inputOperandorSuma);
+		var inputOperandorResta=document.createElement("input");
+			inputOperandorResta.type="button";
+			inputOperandorResta.name="resta";
+			inputOperandorResta.value="-";
+			inputOperandorResta.setAttribute("onclick", "calcula('" + inputOperando1.id + "','" + inputOperando2.id+ "','-','" + inputResultado.id + "')");
+		formCalc.appendChild(inputOperandorResta);
+		var inputOperandorProd=document.createElement("input");
+			inputOperandorProd.type="button";
+			inputOperandorProd.name="prod";
+			inputOperandorProd.value="*";
+			inputOperandorProd.setAttribute("onclick", "calcula('" + inputOperando1.id + "','" + inputOperando2.id+ "','*','" + inputResultado.id + "')");
+		formCalc.appendChild(inputOperandorProd);
+		var inputOperandorDiv=document.createElement("input");
+			inputOperandorDiv.type="button";
+			inputOperandorDiv.name="div";
+			inputOperandorDiv.value="/";
+			inputOperandorDiv.setAttribute("onclick", "calcula('" + inputOperando1.id + "','" + inputOperando2.id+ "','/','" + inputResultado.id + "')");
+		formCalc.appendChild(inputOperandorDiv);
+
+
+		formCalc.appendChild(document.createElement("br"));
+		formCalc.appendChild(document.createElement("br"));
+		formCalc.appendChild(inputResultado);
+		formCalc.appendChild(document.createElement("br"));
+		formCalc.appendChild(document.createElement("br"));
+
+		caja.appendChild(document.createTextNode('OPERACIONES REALIZADAS'));
+		caja.appendChild(document.createElement("br"));
+
+
+	}
+
+	function calcula(op1Input, op2Input, operadorInput, resultadoInput){
+		//console.log(op1);
+		//console.log(op2);
+		//console.log(operador);
+		//console.log(document.getElementById(op1).value);
+		//console.log(document.getElementById(op2).value);
+
+		var op1=document.getElementById(op1Input).value;
+		var op2=document.getElementById(op2Input).value;
+		
+		var resultado= eval(op1 + operadorInput + op2);
+		document.getElementById(resultadoInput).value=resultado;
+
+		document.getElementById("cajaCalculadora").innerHTML+="<br>" + op1 + operadorInput + op2 + "<br>";
+
+		//console.log(resultado);
+
+
+
+
+
+	}
+
+
+
+
+</script>
+</html>
+
+		<!--<form name="calc">
+			Operando 1 <input name="operando1" value="0" size="12"
+				maxlength="12" type="text">
+			<br>
+			Operando 2 <input name="operando2" value="0" size="12"
+				maxlength="12" type="text">
+			<br>
+			<input name="" value=" + "
+				onclick="calcula('+')" type="button">
+			<input name="" value=" - "
+				onclick="calcula('-') " type="button">
+			<input name="" value=" * "
+				onclick="calcula(  '*'   )" type="button">
+			<input name="" value=" / "
+				onclick="calcula ('/')" type="button">
+			<br>
+			Resultado <input name="resultado" value="0" size="12" type="text">
+		</form>
+		<div id='texto'>Operaciones realizadas:<br></div> -->
