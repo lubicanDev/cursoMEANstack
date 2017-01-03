@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Ejemplo Validacion Formulario</title>
+		<meta name="description" content="Ejemplo Header HTML5">
+	</head>
+
+	<body>
+		<header>
+			<h1 id="principal">Validación Formulario</h1>
+		</header>
+
+
+		<section>
+
+			<form name="miFormulario">
+
+
+
+				Texto: <input type="text" name="mensaje" id="mensaje" placeholder="Pon un mensaje de error" required="required"> <br>
+
+				eMail: <input type="email" name="miEmail" id="miEmail" placeholder="mail@dominio" title="Este campo es tipo Email" oninvalid="validacionPersonalizadaEmail(this)" required="required" > <br>
+
+				<input type="submit" value="Enviar">
+
+			</form>
+
+		</section>
+
+
+
+		<footer>
+
+		</footer>
+
+
+
+
+
+	</body>
+
+	<script type="text/javascript">
+
+        function validacionPersonalizadaEmail(input) {
+            //Si no es valido
+            if (!input.validity.valid) {
+                //Cambiar el mensaje de error a mostrar
+                input.setCustomValidity(document.getElementById("mensaje").value);
+            }
+        }
+
+	</script>
+</html>

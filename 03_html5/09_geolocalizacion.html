@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>09_geolocalizacion.html</title>
+		<meta name="description" content="Ejemplo Header HTML5">
+	</head>
+
+	<body>
+		<header>
+			<h1 id="principal">Georeferenciando</h1>
+		</header>
+
+
+		<section>
+
+			<input type="button" value="Georeferenciar" onclick="queMeGeoreferencio()">
+
+
+
+		</section>
+
+		</section>
+
+
+
+		<footer>
+
+		</footer>
+
+	</body>
+
+	<script type="text/javascript">
+
+		function queMeGeoreferencio() {
+
+			if (navigator.geolocation) {
+
+				var opciones=  {
+					timeout:6000,
+					maximunAge: 600000,
+					enableHightAccuracy: true
+				}
+
+				navigator.geolocation.getCurrentPosition(alRecibirGeo, errorEnGeo, opciones);
+
+			} else {
+				alert("No soporto Geolocalización");
+			}
+
+		}
+
+		function alRecibirGeo(posicion) {
+
+
+			//alert("latitud: " + posicion.coords.latitude + ", longitud: " + posicion.coords.longitude + ", altitud: " + posicion.coords.latitude);
+
+			var latitude=posicion.coords.latitude;
+			var longitude=posicion.coords.longitude;
+
+			var imagenMapa= "http://maps.google,com/maps/api/staticmap?" + 
+			"sensor=false"
+
+
+		}
+
+		function errorEnGeo (error) {
+
+			alert("error código: " + error.message);
+
+		}
+
+
+
+	</script>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Ejemplo Validacion Formulario</title>
+		<meta name="description" content="Ejemplo Header HTML5">
+	</head>
+
+	<body>
+		<header>
+			<h1 id="principal">Validación Formulario</h1>
+		</header>
+
+
+		<section>
+
+			<form name="miFormulario" onSumit="return ValidaCampos(this)">
+
+				Número de teléfono: <input type="text" name="phone" id="phone"> <br>
+
+				DNI: <input type="text" name="dni" id="dni"> <br>
+
+				<input type="submit" value="Enviar">
+
+			</form>
+
+		</section>
+
+
+
+		<footer>
+
+		</footer>
+
+
+
+
+
+	</body>
+
+	<script type="text/javascript">
+
+		function ValidaCampos(miFormulario){
+
+			var patronPhone= /^[5-9]{1}\d{8}$/;
+			var patronDNI = /^\d{8}[a-zA-Z]$/;
+
+			if (patronPhone.test(miFormulario.phone.value) == false) {
+
+				alert("Campo de teléfono no válido");
+
+				return false;
+
+			} else if (patronDNI.test(miFormulario.dni.value) == false) {
+				
+				alert("Campo de DNI no válido");
+				
+				return false;
+			} else {
+
+				// return true;
+			}
+
+			
+		}
+
+
+
+
+	</script>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>app_cv_formularios</title>
+		<meta name="description" content="Ejemplo Header HTML5">
+	</head>
+
+	<body>
+		<header>
+			<h1 id="principal">Añadir Experiencia</h1>
+		</header>
+
+
+		<section>
+
+			<form name="cvForm" id="cvFormId" onsubmit="return ExperienceAdd(this)" method="">
+
+				Empresa: <input type="text" name="empresa" id="empresaId" placeholder="" required><br><br>
+
+				Cargo: <input type="text" name="cargo" id="cargoId" placeholder="" required><br><br>
+
+				Fecha de inicio: <input type="date" name="fechaInicio" id="fechaInicioId"><br><br>
+				
+				Fecha de finalización: <input type="date" name="fechaFinal" id="fechaFinalId"><br><br>
+
+				Localización: <input type="text" name="localizacion" id="localizacionId" placeholder="" required><br><br>
+
+				<input type="submit" value="Añadir Experiencia al CV"><br><br>
+
+			</form>
+
+		</section>
+
+		<section>
+
+			<h2>JSON:</h2>
+
+			<form name="cvJSON">
+				<textarea id="textareaJsonId" rows="10" cols="50"> </textarea><br><br>
+
+				<input type="submit" value="Cargar y Mostrar">
+			</form>
+
+		</section>
+
+
+
+		<footer>
+
+		</footer>
+
+	</body>
+
+	<script type="text/javascript">
+
+	function ExperienceAdd(input){
+
+		var empresaInput=input.empresa.value;
+		var cargoInput=input.cargo.value;
+		var fechaInicioInput=input.fechaInicio.value;
+		var fechaFinalInput=input.fechaFinal.value;
+		var localizacionInput=input.localizacion.value;
+
+		var experiencia= {empresa:empresaInput, cargo:cargoInput, fechaInicio:fechaInicioInput, fechaFinal:fechaFinalInput, localizacion:localizacionInput};
+
+		//console.log(experiencia);
+
+		var experienciaJsonString=JSON.stringify(experiencia);
+
+		//console.log(experienciaJsonString);
+
+		document.getElementById("textareaJsonId").innerHTML = experienciaJsonString;
+
+
+		//alert(empresa);
+
+
+
+
+
+	}
+
+
+
+
+
+
+	</script>
+</html>
