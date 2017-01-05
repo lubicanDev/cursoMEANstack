@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>WebStorage</title>
+    <meta name="description" content="Ejemplo WebStorage HTML5">
+</head>
+
+<body>
+    <header>
+        <h1 id="principal">ejemplo - LocalStorage</h1>
+    </header>
+
+
+    <section>
+        <form name="miFormulario">
+            <input type="text" name="nombre" id="nombre" placeholder="Nombre">
+            <input type="text" name="apellido" id="apellido" placeholder="Apellido">
+
+            <button type="button" onclick="guardarElementos()">Guardar</button><br><br>
+
+            <p> Nombre Almacenado: <span id="nombreGuardado"></span> - Apellido Almacenado: <span id="apellidoGuardado"></span><button type="button" onclick="cargaElementos()">Cargar Elementos</button><br><br>
+            </p>
+        </form>
+    </section>
+
+
+
+    <footer>
+
+    </footer>
+</body>
+
+<script type="text/javascript">
+    function guardarElementos() {
+
+        var nombreToSave = document.miFormulario.nombre.value;
+        var apellidoToSave = document.miFormulario.apellido.value;
+        //var nombreToSave = document.getElementById("nombre").value;
+        //var apellidoToSave = document.getElementById("apellido").value;
+
+        localStorage.setItem("nombre", nombreToSave);
+        localStorage.setItem("apellido", apellidoToSave);
+    }
+
+    function cargaElementos() {
+
+        var nombreToCargar = localStorage.getItem("nombre");
+        var apellidoToCargar = localStorage.getItem("apellido");
+
+        document.getElementById("nombreGuardado").innerHTML = nombreToCargar;
+        document.getElementById("apellidoGuardado").innerHTML = apellidoToCargar;
+
+    }
+</script>
+
+</html>

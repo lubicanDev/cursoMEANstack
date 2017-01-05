@@ -1,90 +1,81 @@
 <!DOCTYPE html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8">
-		<title>app_cv_formularios</title>
-		<meta name="description" content="Ejemplo Header HTML5">
-	</head>
 
-	<body>
-		<header>
-			<h1 id="principal">Añadir Experiencia</h1>
-		</header>
+<head>
+    <meta charset="UTF-8">
+    <title>app_cv_formularios</title>
+    <meta name="description" content="Ejemplo Header HTML5">
+</head>
 
+<body>
+    <header>
+        <h1 id="principal">Añadir Experiencia</h1>
+    </header>
 
-		<section>
+    <section>
+        <form name="cvForm" id="cvFormId">
+            Empresa: <input type="text" name="empresa" id="empresaId" placeholder="" required><br><br> Cargo: <input type="text" name="cargo" id="cargoId" placeholder="" required><br><br> Fecha de inicio: <input type="date" name="fechaInicio" id="fechaInicioId"><br><br>            Fecha de finalización: <input type="date" name="fechaFinal" id="fechaFinalId"><br><br> Localización: <input type="text" name="localizacion" id="localizacionId" placeholder="" required><br><br>
+            <button type="button" onclick="ExperienceAdd()">Añadir Experiencia al CV</button>
+        </form>
+    </section>
 
-			<form name="cvForm" id="cvFormId" onsubmit="return ExperienceAdd(this)" method="">
+    <section>
+        <h2>JSON:</h2>
+        <form name="cvJSON">
+            <textarea id="textareaJsonId" rows="10" cols="50"> </textarea><br><br>
+            <button type="button" onclick="ExperienceShow()">Cargar y Mostrar</button>
+        </form>
+    </section>
+    <section>
+        <p>EXPERIENCIA</p>
+        <div id="experienciaSection"></div>
 
-				Empresa: <input type="text" name="empresa" id="empresaId" placeholder="" required><br><br>
+    </section>
+    <footer>
+    </footer>
+</body>
 
-				Cargo: <input type="text" name="cargo" id="cargoId" placeholder="" required><br><br>
+<script type="text/javascript">
+    //cargo del localStorage para mostrarlo al cargar la página
+    document.getElementById("textareaJsonId").innerHTML = localStorage.getItem("puesto");
+    //TODO: actualizar tambien las cajas de los formularios
+    function ExperienceAdd() {
 
-				Fecha de inicio: <input type="date" name="fechaInicio" id="fechaInicioId"><br><br>
-				
-				Fecha de finalización: <input type="date" name="fechaFinal" id="fechaFinalId"><br><br>
+        var experiencia = []; // Un array para almacenar los puestos
 
-				Localización: <input type="text" name="localizacion" id="localizacionId" placeholder="" required><br><br>
+        var empresaInput = document.cvForm.empresa.value;
+        var cargoInput = document.cvForm.cargo.value;
+        var fechaInicioInput = document.cvForm.fechaInicio.value;
+        var fechaFinalInput = document.cvForm.fechaFinal.value;
+        var localizacionInput = document.cvForm.localizacion.value;
 
-				<input type="submit" value="Añadir Experiencia al CV"><br><br>
+        // puesto en formato JSON
+        var puesto = {
+            empresa: empresaInput,
+            cargo: cargoInput,
+            fechaInicio: fechaInicioInput,
+            fechaFinal: fechaFinalInput,
+            localizacion: localizacionInput
+        };
 
-			</form>
+        experiencia[experiencia.lenght] = puesto;
 
-		</section>
+        // Stringify Puesto y experiencia
+        var puestoJsonString = JSON.stringify(puesto);
+        var experienciaJsonString = JSON.stringify(experiencia);
 
-		<section>
+        // almacenamos en localStorage el último puesto introducida
+        localStorage.setItem("puesto", puestoJsonString);
+        // almacenamos en localStorage la experiencia
+        localStorage.setItem("experiencia", puestoJsonString);
+        //cargo del localStorage para mostrarlo al cargar la página
+        document.getElementById("textareaJsonId").innerHTML = localStorage.getItem("puesto");
+    }
 
-			<h2>JSON:</h2>
+    function ExperienceShow() {
+        localStorage.getItem
 
-			<form name="cvJSON">
-				<textarea id="textareaJsonId" rows="10" cols="50"> </textarea><br><br>
+    }
+</script>
 
-				<input type="submit" value="Cargar y Mostrar">
-			</form>
-
-		</section>
-
-
-
-		<footer>
-
-		</footer>
-
-	</body>
-
-	<script type="text/javascript">
-
-	function ExperienceAdd(input){
-
-		var empresaInput=input.empresa.value;
-		var cargoInput=input.cargo.value;
-		var fechaInicioInput=input.fechaInicio.value;
-		var fechaFinalInput=input.fechaFinal.value;
-		var localizacionInput=input.localizacion.value;
-
-		var experiencia= {empresa:empresaInput, cargo:cargoInput, fechaInicio:fechaInicioInput, fechaFinal:fechaFinalInput, localizacion:localizacionInput};
-
-		//console.log(experiencia);
-
-		var experienciaJsonString=JSON.stringify(experiencia);
-
-		//console.log(experienciaJsonString);
-
-		document.getElementById("textareaJsonId").innerHTML = experienciaJsonString;
-
-
-		//alert(empresa);
-
-
-
-
-
-	}
-
-
-
-
-
-
-	</script>
 </html>
