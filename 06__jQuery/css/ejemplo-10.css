@@ -1,0 +1,19 @@
+#text1 {
+    color: rgb(50, 50, 100);
+}
+
+#text2 {
+    color: rgb(50, 50, 150);
+}
+
+#text3 {
+    color: rgb(50, 50, 200);
+}
+
+#text4 {
+    color: rgb(50, 50, 250);
+}
+
+.blur {
+    color: #f00 !important
+}
