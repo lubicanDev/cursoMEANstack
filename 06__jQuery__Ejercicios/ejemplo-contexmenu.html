@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>contextmenu demo</title>
+    <script type="text/javascript" src="ejemplo-contexmenu.js">
+    </script>
+    <style>
+        div {
+            background: blue;
+            color: white;
+            height: 100px;
+            width: 150px;
+        }
+        
+        div.contextmenu {
+            background: yellow;
+            color: black;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body>
+
+    <div></div>
+    <span>Right click the block</span>
+
+    <script>
+        var div = $("div:first");
+        div.contextmenu(function() {
+            div.toggleClass("contextmenu");
+        });
+
+        $(document).ready(function() {
+            $(document).bind("contextmenu", function(e) {
+                return false;
+            });
+        });
+    </script>
+
+</body>
+
+</html>
