@@ -14,6 +14,9 @@ $(document).ready(function() {
 
 */
 
+
+//REVISAR LA SOLUCION DE GERMAN, USANDO ON(), PORQUE BIND ESTÁ DEPRECADOD
+
 function initializeEvents() {
     $("#parrafos p").each(markBySize);
 }
