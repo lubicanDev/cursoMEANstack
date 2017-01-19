@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html data-ng-app>
+
+<head>
+    <meta charset="utf-8">
+    <title>Segundo ejemplo de AngularJS: ng-init y ng-repeat</title>
+</head>
+
+<body>
+
+
+    <div data-ng-init="variosNombres=['Alfonso', 'Julio', 'Manuel', 'Luis']; variosAnimales=['Perro', 'Gato', 'Vaca', 'Cerdo']">
+        <input type="button" value="Púlsame" data-ng-click="variosNombres=['solo uno']">
+        <input type="text" data-ng-model="esteInput" data-ng-change="variosNombres=[esteInput,'Valor 2']">
+
+        <h3>Bucle con ng-repeat</h3>
+        <ul>
+            <li data-ng-repeat="nombre in variosNombres">
+                {{nombre + " no viene al Bar."}}
+            </li>
+        </ul>
+
+        <ul>
+            <li data-ng-repeat="animal in variosAnimales">
+                {{animal + " es un animal doméstico"}}
+            </li>
+        </ul>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+</body>
+
+</html>
