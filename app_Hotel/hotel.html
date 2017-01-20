@@ -27,42 +27,197 @@
     <!--<link href="css/font-awesome.css" media="screen" rel="stylesheet" type="text/css">-->
     <!--<link href="css/icomoon.css" media="screen" rel="stylesheet" type="text/css">-->
     <!--<link href="css/animate.css" media="screen" rel="stylesheet" type="text/css">-->
-    <!--<link href="css/theme-styles.css" media="screen" rel="stylesheet" type="text/css">-->
+    <link href="css/theme-styles.css" media="screen" rel="stylesheet" type="text/css">
 </head>
 
 <body>
+    <!-- ======================================== -->
+    <!-- =========== START CABECERA ============ -->
+    <!-- ======================================== -->
     <section id="">
         <div class="fullwidth-section half-padding">
-            <div class="col-md-12">
-                <h1 class="">RESERVAS HOTEL MEAN</h1>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h1 class="page-header">HOTELES MEAN</h1>
+                        <h4 class="">Página de reservas</h4>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-
     <!-- ======================================== -->
     <!-- =========== START CLIENTE SECTION ============ -->
     <!-- ======================================== -->
-    <section id="">
-        <div class="fullwidth-section half-padding">
-            <h2 class="">Datos del cliente</h2>
-            <div class="col-md-4">
-                <form action="" id="form-cliente">
-                    Nombre: <input type="text" name="nombre"> &nbsp;&nbsp; Apellido: <input type="text" name="apellido">&nbsp;&nbsp; E-mail: <input type="email" name="email">
-                </form>
+
+    <section id="formulario-tipo">
+        <div class="fullwidth-section kill-top-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <form id="form-cliente" action="" method="" role="form">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h3 class="weight-400">Datos Cliente</h3>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="name" class="col-sm-4 control-label text-right">Nombre</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" placeholder="Introduce tu Nombre" name="name" id="name" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="apellido" class="col-sm-4 control-label text-right">Apellido</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" placeholder="Introduce tu Apellido" name="apellido" id="apellido" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="email" class="col-sm-4 control-label text-right">e-mail</label>
+                                        <div class="col-sm-8">
+                                            <input type="email" class="form-control" placeholder="Introduce tu e-mail" name="email" id="email" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h3 class="weight-400">Datos de la reserva</h3>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="date-in" class="col-sm-4 control-label text-right">Fecha de entrada</label>
+                                        <div class="col-sm-8">
+                                            <input type="date" class="form-control" name="date-in" id="date-in" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="date-out" class="col-sm-4 control-label text-right">Fecha de salida</label>
+                                        <div class="col-sm-8">
+                                            <input type="date" class="form-control" name="date-out" id="date-out" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" value=""> Habitación Doble</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="text-center">
+                                        <br/>
+                                        <button class="btn btn-primary btn-round" type="submit">Enviar Datos </button><br>
+                                        <div id="error">
+                                            Por favor, completa todos los campos requeridos
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!--col-md-4-->
+                    <div class="col-md-8">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h3 class="weight-400">Calendario Disponibilidad</h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Lun</th>
+                                            <th>Mar</th>
+                                            <th>Mie</th>
+                                            <th>Jue</th>
+                                            <th>Vie</th>
+                                            <th>Sáb</th>
+                                            <th>Dom</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>30</td>
+                                            <td>31</td>
+                                            <td>1</td>
+                                            <td>2</td>
+                                            <td>3</td>
+                                            <td>4</td>
+                                            <td>5</td>
+                                        </tr>
+                                        <tr>
+                                            <td>6</td>
+                                            <td>7</td>
+                                            <td>8</td>
+                                            <td>9</td>
+                                            <td>10</td>
+                                            <td>11</td>
+                                            <td>12</td>
+                                        </tr>
+                                        <tr>
+                                            <td>13</td>
+                                            <td>14</td>
+                                            <td>15</td>
+                                            <td>16</td>
+                                            <td>17</td>
+                                            <td>18</td>
+                                            <td>19</td>
+                                        </tr>
+                                        <tr>
+                                            <td>20</td>
+                                            <td>21</td>
+                                            <td>22</td>
+                                            <td>23</td>
+                                            <td>24</td>
+                                            <td>25</td>
+                                            <td>26</td>
+                                        </tr>
+                                        <tr>
+                                            <td>27</td>
+                                            <td>28</td>
+                                            <td>29</td>
+                                            <td>30</td>
+                                            <td>1</td>
+                                            <td>2</td>
+                                            <td>3</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--row-->
             </div>
+            <!--container-->
         </div>
     </section>
-    <!-- ======================================== -->
-    <!-- =========== START RESERVA SECTION ============= -->
-    <!-- ======================================== -->
-    <section id="">
-        <div class="">
-            <h2 class="">Datos de la reserva</h2>
-            <form action="" id="form-reserva">
-                Fecha de entrada: <input type="date" name="in-date"> &nbsp;&nbsp; Fecha de Salida: <input type="text" name="out-date">&nbsp;&nbsp; Habitación doble: <input type="checkbox" name="doble">
-            </form>
-        </div>
-    </section>
+
+
     <!-- ======================================== -->
     <!-- =========== START CALENDARIO SECTION ============= -->
     <!-- ======================================== -->
