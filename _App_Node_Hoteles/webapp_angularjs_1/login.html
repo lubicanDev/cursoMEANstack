@@ -1,0 +1,33 @@
+<!--nombre de la app. ara que al juntar todo el código funcione, todos tienen que usar el mismo nombre-->
+<html data-ng-app="appNodeHotel">
+
+<head>
+    <meta charset="utf-8">
+    <title>LoginController</title>
+    <link rel="stylesheet" href="scripts/bootstrap-3.3.6-dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <!-- Añadimos controlador en el div -->
+    <div data-ng-controller="LoginController as LogCtrl">
+        <h2>Login</h2>
+        <label for="usuario" class="">Usuario:</label>
+        <input type="text" name="usuario" data-ng-model="LogCtrl.usuario" /><br><br>
+        <label for="password" class="">Contraseña:</label>
+        <input type="password" name="password" data-ng-model="LogCtrl.pass" />
+        <br><br><input type="button" value="{{LogCtrl.ButtonValue()}}" ng-click="LogCtrl.logInLogOut(LogCtrl.usuario,LogCtrl.pass)" /> <br>
+
+        <div>Usuario Actual: {{LogCtrl.usuarioActual()}} </div>
+        <div>¿Está Logeado?: {{LogCtrl.siEstaLogeado()}} </div>
+    </div>
+
+
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<script src="js/modelo-login.js">
+</script>
+<script src="js/login.js">
+</script>
+
+</html>
