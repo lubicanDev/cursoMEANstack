@@ -1,0 +1,12 @@
+Los depuradores principalmente proporcionan
+las siguientes caracter�sticas:
+? Observadores (watchers).
+� Permite visualizar el valor de una determinada
+variable o expresi�n.
+? Consola de consulta (drawer).
+� Permite ejecutar expresiones de JavaScript
+usando como variables el contexto actual de
+ejecuci�n.
+? Pila de llamadas (call stack).
+� Permite visualizar qu� funciones hay abiertas en
+el punto bajo depuraci�n.

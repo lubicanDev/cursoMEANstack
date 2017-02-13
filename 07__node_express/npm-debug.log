@@ -1,0 +1,169 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'express',
+1 verbose cli   '--',
+1 verbose cli   'serv',
+1 verbose cli   '--dev' ]
+2 info using npm@3.10.8
+3 info using node@v6.9.0
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly fetchPackageMetaData express
+8 silly fetchPackageMetaData serv
+9 silly fetchPackageMetaData --dev
+10 silly fetchNamedPackageData express
+11 silly mapToRegistry name express
+12 silly mapToRegistry using default registry
+13 silly mapToRegistry registry https://registry.npmjs.org/
+14 silly mapToRegistry data Result {
+14 silly mapToRegistry   raw: 'express',
+14 silly mapToRegistry   scope: null,
+14 silly mapToRegistry   escapedName: 'express',
+14 silly mapToRegistry   name: 'express',
+14 silly mapToRegistry   rawSpec: '',
+14 silly mapToRegistry   spec: 'latest',
+14 silly mapToRegistry   type: 'tag' }
+15 silly mapToRegistry uri https://registry.npmjs.org/express
+16 silly fetchNamedPackageData serv
+17 silly mapToRegistry name serv
+18 silly mapToRegistry using default registry
+19 silly mapToRegistry registry https://registry.npmjs.org/
+20 silly mapToRegistry data Result {
+20 silly mapToRegistry   raw: 'serv',
+20 silly mapToRegistry   scope: null,
+20 silly mapToRegistry   escapedName: 'serv',
+20 silly mapToRegistry   name: 'serv',
+20 silly mapToRegistry   rawSpec: '',
+20 silly mapToRegistry   spec: 'latest',
+20 silly mapToRegistry   type: 'tag' }
+21 silly mapToRegistry uri https://registry.npmjs.org/serv
+22 silly fetchOtherPackageData --dev
+23 silly cache add args [ '--dev', null ]
+24 verbose cache add spec --dev
+25 silly cache add parsed spec Result {
+25 silly cache add   raw: '--dev',
+25 silly cache add   scope: null,
+25 silly cache add   escapedName: null,
+25 silly cache add   name: null,
+25 silly cache add   rawSpec: '--dev',
+25 silly cache add   spec: 'C:\\Users\\tarde\\Ricardo\\lubicanDev_curso_meanstack\\07__node_express\\--dev',
+25 silly cache add   type: 'local' }
+26 error addLocal Could not install C:\Users\tarde\Ricardo\lubicanDev_curso_meanstack\07__node_express\--dev
+27 silly fetchPackageMetaData Error: ENOENT: no such file or directory, open 'C:\Users\tarde\Ricardo\lubicanDev_curso_meanstack\07__node_express\--dev'
+27 silly fetchPackageMetaData     at Error (native)
+27 silly fetchPackageMetaData  error for --dev { Error: ENOENT: no such file or directory, open 'C:\Users\tarde\Ricardo\lubicanDev_curso_meanstack\07__node_express\--dev'
+27 silly fetchPackageMetaData     at Error (native)
+27 silly fetchPackageMetaData   errno: -4058,
+27 silly fetchPackageMetaData   code: 'ENOENT',
+27 silly fetchPackageMetaData   syscall: 'open',
+27 silly fetchPackageMetaData   path: 'C:\\Users\\tarde\\Ricardo\\lubicanDev_curso_meanstack\\07__node_express\\--dev' }
+28 verbose request uri https://registry.npmjs.org/serv
+29 verbose request no auth needed
+30 info attempt registry request try #1 at 17:04:40
+31 verbose request id e2533f3f91608e7b
+32 http request GET https://registry.npmjs.org/serv
+33 verbose request uri https://registry.npmjs.org/express
+34 verbose request no auth needed
+35 info attempt registry request try #1 at 17:04:40
+36 verbose etag W/"589b0708-87387"
+37 verbose lastModified Wed, 08 Feb 2017 11:54:48 GMT
+38 http request GET https://registry.npmjs.org/express
+39 http 200 https://registry.npmjs.org/serv
+40 verbose headers { server: 'nginx/1.10.1',
+40 verbose headers   'content-type': 'application/json',
+40 verbose headers   'last-modified': 'Fri, 24 Apr 2015 05:10:05 GMT',
+40 verbose headers   etag: 'W/"5539d02d-3371"',
+40 verbose headers   'content-encoding': 'gzip',
+40 verbose headers   'cache-control': 'max-age=300',
+40 verbose headers   'content-length': '2478',
+40 verbose headers   'accept-ranges': 'bytes',
+40 verbose headers   date: 'Mon, 13 Feb 2017 16:04:40 GMT',
+40 verbose headers   via: '1.1 varnish',
+40 verbose headers   age: '0',
+40 verbose headers   connection: 'keep-alive',
+40 verbose headers   'x-served-by': 'cache-mad9421-MAD',
+40 verbose headers   'x-cache': 'MISS',
+40 verbose headers   'x-cache-hits': '0',
+40 verbose headers   'x-timer': 'S1487001880.738690,VS0,VE60',
+40 verbose headers   vary: 'Accept-Encoding' }
+41 silly get cb [ 200,
+41 silly get   { server: 'nginx/1.10.1',
+41 silly get     'content-type': 'application/json',
+41 silly get     'last-modified': 'Fri, 24 Apr 2015 05:10:05 GMT',
+41 silly get     etag: 'W/"5539d02d-3371"',
+41 silly get     'content-encoding': 'gzip',
+41 silly get     'cache-control': 'max-age=300',
+41 silly get     'content-length': '2478',
+41 silly get     'accept-ranges': 'bytes',
+41 silly get     date: 'Mon, 13 Feb 2017 16:04:40 GMT',
+41 silly get     via: '1.1 varnish',
+41 silly get     age: '0',
+41 silly get     connection: 'keep-alive',
+41 silly get     'x-served-by': 'cache-mad9421-MAD',
+41 silly get     'x-cache': 'MISS',
+41 silly get     'x-cache-hits': '0',
+41 silly get     'x-timer': 'S1487001880.738690,VS0,VE60',
+41 silly get     vary: 'Accept-Encoding' } ]
+42 verbose get saving serv to C:\Users\tarde\AppData\Roaming\npm-cache\registry.npmjs.org\serv\.cache.json
+43 verbose correctMkdir C:\Users\tarde\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+44 http 200 https://registry.npmjs.org/express
+45 verbose headers { server: 'nginx/1.10.1',
+45 verbose headers   'content-type': 'application/json',
+45 verbose headers   'last-modified': 'Sat, 11 Feb 2017 11:43:38 GMT',
+45 verbose headers   etag: 'W/"589ef8ea-873bb"',
+45 verbose headers   'content-encoding': 'gzip',
+45 verbose headers   'cache-control': 'max-age=300',
+45 verbose headers   'content-length': '41833',
+45 verbose headers   'accept-ranges': 'bytes',
+45 verbose headers   date: 'Mon, 13 Feb 2017 16:04:40 GMT',
+45 verbose headers   via: '1.1 varnish',
+45 verbose headers   age: '175',
+45 verbose headers   connection: 'keep-alive',
+45 verbose headers   'x-served-by': 'cache-mad9434-MAD',
+45 verbose headers   'x-cache': 'HIT',
+45 verbose headers   'x-cache-hits': '2',
+45 verbose headers   'x-timer': 'S1487001880.916900,VS0,VE0',
+45 verbose headers   vary: 'Accept-Encoding' }
+46 silly get cb [ 200,
+46 silly get   { server: 'nginx/1.10.1',
+46 silly get     'content-type': 'application/json',
+46 silly get     'last-modified': 'Sat, 11 Feb 2017 11:43:38 GMT',
+46 silly get     etag: 'W/"589ef8ea-873bb"',
+46 silly get     'content-encoding': 'gzip',
+46 silly get     'cache-control': 'max-age=300',
+46 silly get     'content-length': '41833',
+46 silly get     'accept-ranges': 'bytes',
+46 silly get     date: 'Mon, 13 Feb 2017 16:04:40 GMT',
+46 silly get     via: '1.1 varnish',
+46 silly get     age: '175',
+46 silly get     connection: 'keep-alive',
+46 silly get     'x-served-by': 'cache-mad9434-MAD',
+46 silly get     'x-cache': 'HIT',
+46 silly get     'x-cache-hits': '2',
+46 silly get     'x-timer': 'S1487001880.916900,VS0,VE0',
+46 silly get     vary: 'Accept-Encoding' } ]
+47 verbose get saving express to C:\Users\tarde\AppData\Roaming\npm-cache\registry.npmjs.org\express\.cache.json
+48 verbose correctMkdir C:\Users\tarde\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+49 silly rollbackFailedOptional Starting
+50 silly rollbackFailedOptional Finishing
+51 silly runTopLevelLifecycles Finishing
+52 silly install printInstalled
+53 verbose stack Error: ENOENT: no such file or directory, open 'C:\Users\tarde\Ricardo\lubicanDev_curso_meanstack\07__node_express\--dev'
+53 verbose stack     at Error (native)
+54 verbose cwd C:\Users\tarde\Ricardo\lubicanDev_curso_meanstack\07__node_express
+55 error Windows_NT 6.1.7601
+56 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "express" "--" "serv" "--dev"
+57 error node v6.9.0
+58 error npm  v3.10.8
+59 error path C:\Users\tarde\Ricardo\lubicanDev_curso_meanstack\07__node_express\--dev
+60 error code ENOENT
+61 error errno -4058
+62 error syscall open
+63 error enoent ENOENT: no such file or directory, open 'C:\Users\tarde\Ricardo\lubicanDev_curso_meanstack\07__node_express\--dev'
+64 error enoent ENOENT: no such file or directory, open 'C:\Users\tarde\Ricardo\lubicanDev_curso_meanstack\07__node_express\--dev'
+64 error enoent This is most likely not a problem with npm itself
+64 error enoent and is related to npm not being able to find a file.
+65 verbose exit [ -4058, true ]

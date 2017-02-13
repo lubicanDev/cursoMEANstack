@@ -1,0 +1,12 @@
+Los depuradores principalmente proporcionan
+las siguientes características:
+? Observadores (watchers).
+– Permite visualizar el valor de una determinada
+variable o expresión.
+? Consola de consulta (drawer).
+– Permite ejecutar expresiones de JavaScript
+usando como variables el contexto actual de
+ejecución.
+? Pila de llamadas (call stack).
+– Permite visualizar qué funciones hay abiertas en
+el punto bajo depuración.

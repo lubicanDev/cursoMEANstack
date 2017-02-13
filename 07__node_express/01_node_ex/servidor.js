@@ -6,7 +6,8 @@ var miExpress = require("express");
 // Instanciar
 var app = miExpress();
 
-// Enrutamiento
+// Enrutamiento... 
+//vincular dos rutas  a dos funciones callback
 app.get("/", peticionPrincipal); // cuando alquien acceda/se haga una peticion (request) a la raiz...
 
 app.get("/about", peticionAbout);
