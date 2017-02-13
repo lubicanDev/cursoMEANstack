@@ -1,0 +1,22 @@
+[{
+        "nombre_hotel": "Hotel Uno",
+        "habitación": ["s", "s", "s", "s", "s", "s", "d", "d", "d", "d", "d", "d", "d"]
+    }, {
+        "nombre_hotel": "Hotel Dos",
+        "habitación": ["s", "s", "s", "s", "s", "s", "d", "d", "d", "d", "d", "d", "d"]
+    }, {
+        "nombre_hotel": "Hotel Tres",
+        "habitación": ["s", "s", "s", "s", "s", "s", "d", "d", "d", "d", "d", "d", "d"]
+    }, {
+        "nombre_hotel": "Hotel Cuatro",
+        "habitación": ["s", "s", "s", "s", "s", "s", "d", "d", "d", "d", "d", "d", "d"]
+    }, {
+        "nombre_hotel": "Hotel Cinco",
+        "habitación": ["s", "s", "s", "s", "s", "s", "d", "d", "d", "d", "d", "d", "d"]
+    }, {
+        "nombre_hotel": "Hotel Seis",
+        "habitación": ["s", "s", "s", "s", "s", "s", "d", "d", "d", "d", "d", "d", "d"]
+    },
+
+
+]

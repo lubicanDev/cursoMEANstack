@@ -1,0 +1,9 @@
+[{
+    "numero-reserva": 254789,
+    "cliente": 1,
+    "hotel": 3,
+    "habitacion": 13,
+    "fecha-entrada": 1111111111,
+    "fecha-salida": 111111111,
+    "extras": [true, true, false, false]
+}]
