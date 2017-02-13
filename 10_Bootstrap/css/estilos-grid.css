@@ -1,0 +1,12 @@
+h2 {
+    margin-top: 25px;
+}
+
+.row {
+    margin-bottom: 20px;
+}
+
+[class *=col-] {
+    background: rgb(200, 200, 200);
+    border: 1px solid rgb(100, 100, 100);
+}
