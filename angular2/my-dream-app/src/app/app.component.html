@@ -1,0 +1,40 @@
+<h1>
+    {{title}}
+
+</h1>
+<h2> Hola {{nombre}}!</h2>
+
+<h1>Estas son las habitaciones disponibles:</h1>
+
+<!--Una Forma-->
+<!--
+  <h2>Habitación {{room1.room_id}} que es {{room1.getRoomType()}} </h2>
+<h2>Habitación {{room2.room_id}} que es {{room2.getRoomType()}} </h2>
+-->
+
+<!--Otra Forma-->
+
+<!--
+  <h2>Habitación {{rooms[0].room_id}} que es {{rooms[0].getRoomType()}} </h2>
+<h2>Habitación {{rooms[1].room_id}} que es {{rooms[1].getRoomType()}} </h2>
+<h2>Habitación {{rooms[2].room_id}} que es {{rooms[2].getRoomType()}} </h2>
+<h2>Habitación {{rooms[3].room_id}} que es {{rooms[3].getRoomType()}} </h2>
+-->
+
+<!-- Y la Buena-->
+<ul>
+    <li *ngFor="let room of rooms">
+        <h3>Habitación {{room.room_id}} que es {{room.getRoomType()}} </h3>
+    </li>
+</ul>
+
+<h2>Datos del Cliente</h2>
+
+<p>Nombre: <input [(ngModel)]="customerSelected.name" placeholder="Nombre"></p>
+<p>Email:<input [(ngModel)]="customerSelected.email" placeholder="Email"></p>
+
+<ul>
+    <li *ngFor="let customer of customers">
+        <h3>Nombre: {{customer.name}} Email: {{customer.email}} </h3>
+    </li>
+</ul>
