@@ -1,0 +1,27 @@
+- Directorio Raiz
+
+    - Aplicación Web
+
+    - ApiRest    
+        - Aplicación (app.js)
+            Servidor web (bin/www)
+        - Modelo
+            - Schema.js
+            - Lógica de negocio
+                - Habitaciones
+                - Clientes
+                - Reservas
+        - Rutas
+            - index     (/)
+            - Admin     (/admin)
+            - ApiRest   (/api)
+                - (/api/bookings/)
+                - (/api/admin/rooms/)
+                - (/api/admin/customers/)
+                            
+    - Web pública
+        - Angula 2
+        - Recursos státicos
+            - Estilos
+            - Imágenes
+
