@@ -30,11 +30,18 @@
 
 <h2>Datos del Cliente</h2>
 
-<p>Nombre: <input [(ngModel)]="customerSelected.name" placeholder="Nombre"></p>
-<p>Email:<input [(ngModel)]="customerSelected.email" placeholder="Email"></p>
+<!--The ng-model directive binds the value of HTML controls (input, select, textarea) to application data.
+With the ng-model directive you can bind the value of an input field to a variable created in AngularJS.-->
+
+<p><label>Nombre: </label><input [(ngModel)]="customerSelected.name" placeholder="Nombre"></p>
+<p><label>Email: </label><input [(ngModel)]="customerSelected.email" placeholder="Email"></p>
+<!-- 
+    addCustomer -> añadimos un nuevo customer al array customers usando el método del componente addCustomer
+    Hay que tener en cuenta que "customerSelected" es un variable que apunta a un objeto. No es un objeto en sí. Por eso en el método del componente usamos el método de la clase Customer ".clone()", para convertir la variable a objeto -->
+<p><button (click)="addCustomer(customerSelected)">Añadir</button></p>
 
 <ul>
-    <li *ngFor="let customer of customers">
-        <h3>Nombre: {{customer.name}} Email: {{customer.email}} </h3>
+    <li *ngFor="let customer of customers; let i = index; let esPar = odd;" (click)="selectCustomer(customer)">
+        <h3>{{i+1}} - Nombre: {{customer.name}} Email: {{customer.email}} </h3>
     </li>
 </ul>
